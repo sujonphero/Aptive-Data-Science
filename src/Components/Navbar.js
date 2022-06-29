@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 import logo from '../asset/logo.png'
 import {FaBars, FaTimes} from 'react-icons/fa'
+import { Link } from 'react-scroll'
 
 const Navbar = () => {
     const [open,setOpen] = useState(false)
@@ -10,8 +11,15 @@ const Navbar = () => {
     const handleNavOpen = () =>{
         setOpen(!open)
     }
+
+
+    // create toggle open function
+    // const handleNavClose = () =>{
+    //     setOpen(!open)
+    // }
+
   return (
-    <header className='w-full bg-gray-800'>
+    <header className='w-full fixed z-10 bg-gray-800'>
 
         <nav className='h-16 px-6 flex justify-between items-center '>
             
@@ -22,6 +30,12 @@ const Navbar = () => {
 
             {/* desktop navigation section */}
             <ul className='hidden md:flex space-x-8 uppercase text-white font-semibold'>
+
+            {/* <Link to="home" spy={true} smooth={true} offset={50} duration={500}> */}
+                <li>
+                    <Link to='/'>Home</Link>
+                </li>
+            {/* </Link> */}
                 <li>
                     <Link to='/'>Home</Link>
                 </li>
